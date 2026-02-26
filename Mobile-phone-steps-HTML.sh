@@ -4,6 +4,7 @@ echo "只安装         1"
 echo "启动           2"
 echo "更新index      3"
 echo "生成简易后台   4"
+echo "项目库地址https://github.com/CN-ZX114514/Mobile-phone-steps-HTML"
 read -p "" html
 if [ -z "$html" ]; then
     echo "正在安装"
