@@ -1,43 +1,149 @@
-echo "Select HTML activity"
-echo "Install and start Enter"
-echo "Install only 1"
-echo "Start 2"
-echo "Update index 3"
-echo "Generate simple backend 4"
-echo "Project repository URL https://github.com/CN-ZX114514/Mobile-phone-steps-HTML"
+d=0
+
+a=1
+
+echo "Clear completed text above?"
+
+echo "Clear Y          Do not clear N"
+
+read -p "" YorN
+
+if [ "$YorN" = "Y" ]; then
+
+clear
+
+elif [ "$YorN" = "y" ]; then
+
+clear
+
+elif [ "$YorN" = "N" ]; then
+
+echo ""
+
+elif [ "$YorN" = "n" ]; then
+
+echo ""
+
+elif [ -z "$YorN" ]; then
+
+echo ""
+
+fi
+
+echo "Select HTML Activity"
+
+echo "Install and start        Press Enter"
+
+echo "Install only             1"
+
+echo "Start only               2"
+
+echo "Update index             3"
+
+echo "Generate simple backend  4"
+
+echo "Configure shell web dependencies    5"
+
+echo "Configure shell web dependencies SU 6"
+
+echo "View webpage in shell    7"
+
+echo "Blog address: webpwp.b48.pro"
+
+echo "Current version: 1.0.1B"
+
 read -p "" html
+
 if [ -z "$html" ]; then
-    echo "Installing"
-    pkg install nginx
-    echo "Starting"
-    nginx
-    echo "Started successfully"
+
+echo "Installing..."
+
+pkg install nginx
+
+echo "Starting..."
+
+nginx
+
+echo "Start successful."
+
 elif [ "$html" = "1" ]; then
-    echo "Installing"
-    pkg install nginx
-    echo "Installation completed"
+
+echo "Installing..."
+
+pkg install nginx
+
+echo "Installation complete."
+
 elif [ "$html" = "2" ]; then
-    echo "Starting"
-    cd /data/data/com.termux/files/usr/share/nginx/html
-    nginx
-    echo "Started successfully"
+
+echo "Starting..."
+
+cd /data/data/com.termux/files/usr/share/nginx/html
+
+nginx
+
+echo "Start successful."
+
 elif [ "$html" = "3" ]; then
-    echo "Updating"
-    cp ~/storage/shared/Download/index.html /data/data/com.termux/files/usr/share/nginx/html/
-    nginx -s reload
-    echo "Update successful"
+
+echo "Updating..."
+
+cp ~/storage/shared/Download/index.html /data/data/com.termux/files/usr/share/nginx/html/
+
+nginx -s reload
+
+echo "Update successful."
+
 elif [ "$html" = "4" ]; then
-    cd /storage/emulated/0/Download
-    touch hello.html
-    echo "<!DOCTYPE html>" > hello.html
-    echo "<html lang="zh-CN">" > hello.html
-    echo "<head>" > hello.html
-    echo "<meta charset="UTF-8">" > hello.html
-    echo "<meta name="viewport" content="width=device-width, initial-scale=1.0">" > hello.html
-    echo "<title>My Personal Website - Demo</title>" > hello.html
-    echo "<style>" > hello.html
-    echo "body {" > hello.html
-    echo "" > hello.html
-    cp ~/storage/shared/Download/hello.html /data/data/com.termux/files/usr/share/nginx/html/
-    echo "Successfully accessed 127.0.0.1:8080/hello.html"
+
+cd /storage/emulated/0/Download
+
+touch hello.html
+
+echo "<!DOCTYPE html>" > hello.html
+
+echo "<html lang="zh-CN">" > hello.html
+
+echo "<head>" > hello.html
+
+echo "<meta charset="UTF-8">" > hello.html
+
+echo "<meta name="viewport" content="width=device-width, initial-scale=1.0">" > hello.html
+
+echo "<title>My Personal Website - Demo</title" > hello.html
+
+echo "<style>" > hello.html
+
+echo "body {" > hello.html
+
+echo "" > hello.html
+
+cp ~/storage/shared/Download/hello.html /data/data/com.termux/files/usr/share/nginx/html/
+
+echo "Success. Visit 127.0.0.1:8080/hello.html"
+
+links 127.0.0.1:8080/hello.html
+
+elif [ "$html" = "5" ]; then
+
+echo "Starting configuration..."
+
+pkg install lynx w3m links
+
+echo "Configuration complete."
+
+elif [ "$html" = "6" ]; then
+
+echo "Starting configuration..."
+
+pkg install sudo
+
+sudo apt-get install lynx w3m links
+
+echo "Configuration complete."
+
+elif [ "$html" = "7" ]; then
+
+links 127.0.0.1:8080
+
 fi
