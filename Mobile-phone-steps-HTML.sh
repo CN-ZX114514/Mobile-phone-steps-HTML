@@ -1,10 +1,30 @@
+d=0
+a=1
+echo "是否清除上面已完成的文本"
+echo "清除 Y          不清除 N"
+read -p "" YorN
+if [ "$YorN" = "Y" ]; then
+    clear
+elif [ "$YorN" = "y" ]; then
+    clear
+elif [ "$YorN" = "N" ]; then
+    echo ""
+elif [ "$YorN" = "n" ]; then
+    echo ""
+elif [ -z "$YorN" ]; then
+    echo ""
+fi
 echo "选择html活动"
-echo "安装并启动  回车"
-echo "只安装         1"
-echo "启动           2"
-echo "更新index      3"
-echo "生成简易后台   4"
-echo "项目库地址https://github.com/CN-ZX114514/Mobile-phone-steps-HTML"
+echo "安装并启动        回车"
+echo "只安装               1"
+echo "启动                 2"
+echo "更新index            3"
+echo "生成简易后台         4"
+echo "配置shell网页依赖    5"
+echo "配置shell网页依赖SU  6"
+echo "在shell查看网页      7"
+echo "博客地址webpwp.b48.pro"
+echo "当前版本1.0.1B"
 read -p "" html
 if [ -z "$html" ]; then
     echo "正在安装"
@@ -40,4 +60,16 @@ elif [ "$html" = "4" ]; then
     echo "" > hello.html
     cp ~/storage/shared/Download/hello.html /data/data/com.termux/files/usr/share/nginx/html/
     echo "成功 访问127.0.0.1:8080/hello.html"
+    links 127.0.0.1:8080/hello.html
+elif [ "$html" = "5" ]; then
+    echo "开始配置"
+    pkg install lynx w3m links
+    echo "配置完成"
+    elif [ "$html" = "6" ]; then
+    echo "开始配置"
+    pkg install sudo
+    sudo apt-get install lynx w3m links
+    echo "配置完成"
+    elif [ "$html" = "7" ]; then
+    links 127.0.0.1:8080
 fi
